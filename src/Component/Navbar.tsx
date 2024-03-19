@@ -1,5 +1,5 @@
 import Logo from '../assets/ethereum-classic-logo-removebg-preview.png';
-import { SparklesCore } from "../ui/sparkles";
+import { SparklesCore } from "./ui/sparkles";
 
 const Navbar = () => {
   const page = ["Home", "Skills", "Projects"];
