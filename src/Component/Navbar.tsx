@@ -1,6 +1,3 @@
-import Logo from '../assets/ethereum-classic-logo-removebg-preview.png';
-import { SparklesCore } from "./ui/sparkles";
-
 const Navbar = () => {
   const page = ["Home", "Skills", "Projects"];
   const id = ["home", "skills", "projects"]
@@ -12,7 +9,7 @@ const Navbar = () => {
       <div className="flex justify-center items-center gap-10 w-fit border-[0.5px] border-indigo-400 rounded-2xl py-2 px-6 ">
         {page.map((page, index) => (
           <li className="flex justify-center items-center" key={index}>
-            <a className="font-light text-sm" href={id[index]}>{page}</a>
+            <a className="font-light text-sm dark:text-white text-white" href={id[index]}>{page}</a>
           </li>
         ))}
       </div>

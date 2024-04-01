@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,10 +27,69 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    background-color: #0F0F12;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+.marquee__box{
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 40px;
+}
+
+.marquee__item-1,
+.marquee__item-2{
+  display: inline-block;
+}
+
+@keyframes marquee{
+  0%{
+    transform: translateX(0);
+  }
+
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+.marquee__item-1{
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee2{
+  0%{
+    transform: translateX(-100%);
+  }
+
+  100%{
+    transform: translateX(0);
+  }
+}
+
+.marquee__item-2{
+  animation: marquee2 20s linear infinite;
+}
+
+.marquee__item-1 > li,
+.marquee__item-2 > li{
+  display: inline-block;
+  font-family: Space Grotesk, sans-serif;
+  font-size: 3.375em;
+  --tw-text-opacity: 1;
+  color: rgb(72 72 72 / var(--tw-text-opacity));
+  color: #f0f0f0;
+
+}
+
+.marquee__item-1 > li::after,
+.marquee__item-2 > li::after{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  --tw-content: url("/images/icon/star-outline.svg");
+  content: var(--tw-content);
 }

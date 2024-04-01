@@ -18,6 +18,9 @@ module.exports = {
     },
     fontFamily: {
       'roboto': ['Roboto', 'sans-serif'],
+      'inter': ["inter", "sans-serif"],
+       'migra': ["Migra"],
+        'spaceGrotesk': ["Space Grotesk", "sans-serif"],
     },
     keyframes: {
       meteor: {
