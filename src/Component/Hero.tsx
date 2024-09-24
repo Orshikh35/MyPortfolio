@@ -2,6 +2,8 @@
 import { SparklesCore } from "./ui/sparkles";
 
 export function SparklesPreview() {
+  const title = "Front-End Web Developer";
+
   return (
     <div className="h-screen relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-screen">
@@ -25,7 +27,30 @@ export function SparklesPreview() {
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
       </div>
-      <p className="md:text-3xl text-[12px] lg:text-3xl font-light text-center text-white relative z-20 pt-12">Front-End Web Developer</p>
+
+      {/* Animated Title with Montserrat Font */}
+      <div className="flex justify-center pt-12 relative z-20">
+        {title.split(" ").map((word, wordIndex) => (
+          <span key={wordIndex} className="flex items-center">
+            {word.split("").map((char, index) => (
+              <span
+                key={index}
+                className="text-white font-light text-[12px] lg:text-3xl inline-block font-montserrat"
+                style={{
+                  animation: `fadeIn 0.5s ease forwards ${wordIndex * 0.5 + index * 0.1}s`,
+                  opacity: 0,
+                  marginRight: "5px", // Adjust the gap between letters
+                }}
+              >
+                {char}
+              </span>
+            ))}
+            {/* Optional: Add gap between words */}
+            <span className="text-transparent" style={{ width: "15px" }}></span>
+          </span>
+        ))}
+      </div>
+
       <div className="flex justify-evenly w-screen pt-20">
         {["About", "Skills", "Experience", "Projects"].map((title, index) => (
           <div key={index} className="relative h-[200px] w-[300px] rounded-3xl overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer hover:bg-gradient-to-r hover:from-transparent hover:via-indigo-500 hover:to-transparent hover:border hover:border-sky-500">
@@ -42,6 +67,23 @@ export function SparklesPreview() {
           </div>
         ))}
       </div>
+
+      {/* Add CSS for the letter animation */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .font-montserrat {
+          font-family: 'Montserrat', sans-serif;
+        }
+      `}</style>
     </div>
   );
 }
