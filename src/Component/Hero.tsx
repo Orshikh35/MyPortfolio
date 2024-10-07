@@ -1,8 +1,15 @@
 "use client";
+import { useRouter } from 'next/navigation';
 import { SparklesCore } from "./ui/sparkles";
 
-export function SparklesPreview() {
+export function Hero() {
+  const router = useRouter();
   const title = "Front-End Web Developer";
+
+  // Navigation handler
+  const handleNavigation = (section: string) => {
+    router.push(`/${section}`); // Navigate to /ABOUT, /SKILLS, etc.
+  };
 
   return (
     <div className="h-screen relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
@@ -45,30 +52,34 @@ export function SparklesPreview() {
                 {char}
               </span>
             ))}
-            {/* Optional: Add gap between words */}
             <span className="text-transparent" style={{ width: "15px" }}></span>
           </span>
         ))}
       </div>
 
       <div className="flex justify-evenly w-screen pt-20">
-        {["About", "Skills", "Experience", "Projects"].map((title, index) => (
-          <div key={index} className="relative h-[200px] w-[300px] rounded-3xl overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer hover:bg-gradient-to-r hover:from-transparent hover:via-indigo-500 hover:to-transparent hover:border hover:border-sky-500">
+        {["About", "Skills", "Experience", "Projects"].map((section, index) => (
+          <div 
+            key={index} 
+            onClick={() => handleNavigation(section)} 
+            className="relative h-[200px] w-[300px] rounded-3xl overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer hover:bg-gradient-to-r hover:from-transparent hover:via-indigo-500 hover:to-transparent hover:border hover:border-sky-500"
+          >
             <div className="absolute inset-0 bg-gray-400 opacity-20 rounded-3xl" />
             <div className="flex flex-col justify-center items-center h-full p-6 relative z-10 text-center">
-              <p className="text-white font-bold text-[34px] font-sans pt-[6px]">{title}</p>
+              <p className="text-white font-bold text-[34px] font-sans pt-[6px]">{section}</p>
               <p className="text-white font-light text-[16px] font-sans pt-2">
-                {title === "About" ? "My background, education, hobbies, and more." :
-                 title === "Skills" ? "Languages, frameworks, tools, and libraries I'm experienced with." :
-                 title === "Experience" ? "Previous jobs, internships, and programs I've participated in." :
+                {section === "About" ? "My background, education, hobbies, and more." :
+                 section === "Skills" ? "Languages, frameworks, tools, and libraries I'm experienced with." :
+                 section === "Experience" ? "Previous jobs, internships, and programs I've participated in." :
                  "Cool stuff I've enjoyed tinkering with over the years."}
               </p>
             </div>
           </div>
         ))}
       </div>
+      <div className="flex w-[100px] justify-between">
+      </div>
 
-      {/* Add CSS for the letter animation */}
       <style jsx>{`
         @keyframes fadeIn {
           0% {
@@ -88,4 +99,4 @@ export function SparklesPreview() {
   );
 }
 
-export default SparklesPreview;
+export default Hero;
