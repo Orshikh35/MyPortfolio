@@ -3,7 +3,7 @@ import { SparklesCore } from "@/Component/ui/sparkles";
 import Sidebar from "@/Component/Sidebar";
 import React from "react";
 
-export function AboutPage() {
+export function About() {
 
   return (
     <div className="h-screen relative w-full bg-black flex overflow-hidden rounded-md">
@@ -62,4 +62,4 @@ export function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default About;
