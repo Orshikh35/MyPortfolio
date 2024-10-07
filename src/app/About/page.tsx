@@ -1,6 +1,7 @@
 "use client";
 import { SparklesCore } from "@/Component/ui/sparkles";
 import Sidebar from "@/Component/Sidebar";
+import React from "react";
 
 export function AboutPage() {
 

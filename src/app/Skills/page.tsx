@@ -11,6 +11,7 @@ import d from "../../assets/download.png";
 import p from "../../assets/0_Hdm7hBTZ-hKlbtlV.png";
 import l from "../../assets/Tailwind_CSS_Logo.svg.png";
 import F from "../../assets/Figma-logo.svg.png";
+import React from "react";
 
 const labels = [
   {
