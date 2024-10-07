@@ -1,5 +1,6 @@
 import Hero from "@/Component/Hero";
 import Navbar from "@/Component/Navbar";
+import React from "react";
 
 const Home = () => {
   return (

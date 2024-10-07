@@ -5,7 +5,7 @@ import Ecom from "../../assets/Screenshot 2024-10-04 at 14.51.07.png";
 import Food from "../../assets/Screenshot 2024-10-04 at 14.51.25.png";
 import Parkly from "../../assets/Screenshot 2024-10-04 at 14.51.39.png";
 import Blog from "../../assets/image.png";
-
+import React from "react";
 export function Projects() {
   const handleOpenInNewTab = (url: string) => {
     window.open(url, "_blank");

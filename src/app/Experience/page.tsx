@@ -1,6 +1,7 @@
 "use client";
 import Sidebar from "@/Component/Sidebar";
 import { SparklesCore } from "@/Component/ui/sparkles";
+import React from "react";
 
 export function Experience() {
   return (
