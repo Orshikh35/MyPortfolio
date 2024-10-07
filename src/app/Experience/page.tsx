@@ -3,7 +3,7 @@ import Sidebar from "@/Component/Sidebar";
 import { SparklesCore } from "@/Component/ui/sparkles";
 import React from "react";
 
-export function Experience() {
+const Experience = () => {
   return (
     <div className="h-screen relative w-full bg-black flex  overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-screen">

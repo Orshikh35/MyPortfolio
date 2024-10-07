@@ -52,7 +52,7 @@ const labels = [
   },
 ];
 
-export function Skills() {
+const  Skills = () => {
   return (
     <div className="h-screen relative w-full bg-black flex overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-screen">
