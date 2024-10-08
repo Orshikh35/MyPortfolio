@@ -52,7 +52,7 @@ const labels = [
   },
 ];
 
-const  Skills = () => {
+const Skills = () => {
   return (
     <div className="h-screen relative w-full bg-black flex overflow-hidden rounded-md">
       <div className="w-full absolute inset-0 h-screen">
@@ -67,9 +67,12 @@ const  Skills = () => {
         />
       </div>
       <div className="flex flex-row w-full">
-        <Sidebar />
+        {/* Hide Sidebar on small screens */}
+        <div className="hidden md:block">
+          <Sidebar />
+        </div>
         <div className="flex-grow mt-6 flex flex-col items-center px-4">
-          <h1 className="w-full md:text-7xl font-bold text-white text-center">Skills</h1>
+          <h1 className="w-full md:text-7xl font-bold text-white text-center text-3xl" >Skills</h1>
           <div className="flex flex-col mt-16 items-center">
             <h1 className="w-full md:text-3xl font-bold text-white text-center">Languages</h1>
             <div className="flex flex-wrap justify-center gap-6 mt-12"> 
@@ -88,6 +91,6 @@ const  Skills = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Skills;

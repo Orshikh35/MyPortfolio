@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { SparklesCore } from "./ui/sparkles";
 
 export function Hero() {
@@ -8,7 +8,7 @@ export function Hero() {
 
   // Navigation handler
   const handleNavigation = (section: string) => {
-    router.push(`/${section}`); // Navigate to /ABOUT, /SKILLS, etc.
+    router.push(`/${section}`);
   };
 
   return (
@@ -24,7 +24,9 @@ export function Hero() {
           particleColor="#FFFFFF"
         />
       </div>
-      <p className="md:text-3xl text-[14px] lg:text-3xl font-light text-center text-white relative z-20 pb-4">Hey! I'm</p>
+      <p className="md:text-3xl text-[14px] lg:text-3xl font-light text-center text-white relative z-20 pb-4">
+        Hey! I'm
+      </p>
       <h1 className="md:text-7xl text-3xl lg:text-7xl font-bold text-center text-white relative z-20">
         Bat Orshikh
       </h1>
@@ -34,8 +36,6 @@ export function Hero() {
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
       </div>
-
-      {/* Animated Title with Montserrat Font */}
       <div className="flex justify-center pt-12 relative z-20">
         {title.split(" ").map((word, wordIndex) => (
           <span key={wordIndex} className="flex items-center">
@@ -56,30 +56,31 @@ export function Hero() {
           </span>
         ))}
       </div>
-
-      <div className="flex justify-evenly w-screen pt-20">
+      <div className="flex flex-col md:flex-row justify-evenly items-center w-full max-h-[600px] overflow-y-scroll pt-20 space-y-8 md:space-y-0 md:space-x-4">
         {["About", "Skills", "Experience", "Projects"].map((section, index) => (
-          <div 
-            key={index} 
-            onClick={() => handleNavigation(section)} 
-            className="relative h-[200px] w-[300px] rounded-3xl overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer hover:bg-gradient-to-r hover:from-transparent hover:via-indigo-500 hover:to-transparent hover:border hover:border-sky-500"
+          <div
+            key={index}
+            onClick={() => handleNavigation(section)}
+            className="lg:py-3 relative h-[200px] w-[300px] py-3 rounded-3xl overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer hover:bg-gradient-to-r hover:from-transparent hover:via-indigo-500 hover:to-transparent hover:border hover:border-sky-500"
           >
             <div className="absolute inset-0 bg-gray-400 opacity-20 rounded-3xl" />
             <div className="flex flex-col justify-center items-center h-full p-6 relative z-10 text-center">
-              <p className="text-white font-bold text-[34px] font-sans pt-[6px]">{section}</p>
-              <p className="text-white font-light text-[16px] font-sans pt-2">
-                {section === "About" ? "My background, education, hobbies, and more." :
-                 section === "Skills" ? "Languages, frameworks, tools, and libraries I'm experienced with." :
-                 section === "Experience" ? "Previous jobs, internships, and programs I've participated in." :
-                 "Cool stuff I've enjoyed tinkering with over the years."}
+              <p className="text-white font-bold text-[20px] md:text-[28px] lg:text-[34px] font-sans pt-[6px]">
+                {section}
+              </p>
+              <p className="text-white font-light text-[12px] md:text-[14px] lg:text-[16px] font-sans pt-2">
+                {section === "About"
+                  ? "My background, education, hobbies, and more."
+                  : section === "Skills"
+                  ? "Languages, frameworks, tools, and libraries I'm experienced with."
+                  : section === "Experience"
+                  ? "Previous jobs, internships, and programs I've participated in."
+                  : "Cool stuff I've enjoyed tinkering with over the years."}
               </p>
             </div>
           </div>
         ))}
       </div>
-      <div className="flex w-[100px] justify-between">
-      </div>
-
       <style jsx>{`
         @keyframes fadeIn {
           0% {
@@ -92,7 +93,7 @@ export function Hero() {
           }
         }
         .font-montserrat {
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Montserrat", sans-serif;
         }
       `}</style>
     </div>
